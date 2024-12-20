@@ -6,7 +6,6 @@ import { revalidatePath } from "next/cache";
 import { getAccessType, parseStringify } from "../utils";
 import { clerkClient } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import { title } from "process";
 
 export const createDocument = async ({ userId, email }: CreateDocumentParams) => {
     const roomId = nanoid();
@@ -120,13 +119,16 @@ export const removeCollaborator = async ({ roomId, email }: { roomId: string, em
             throw new Error('You cannot remove yourself from the document');
         }
 
-        const updateRoom = await liveblocks.updateRoom(roomId, {
+        const updatedRoom = await liveblocks.updateRoom(roomId, {
             usersAccesses: {
                 [email]: null
             }
         })
+
+        revalidatePath(`/documents/${roomId}`);
+        return parseStringify(updatedRoom);
     } catch (error) {
-        console.log(`Error happened while removing a room access: ${error}`)
+        console.log(`Error happened while removing a collaborator: ${error}`);
     }
 }
 export const deleteDocument = async (roomId: string) => {

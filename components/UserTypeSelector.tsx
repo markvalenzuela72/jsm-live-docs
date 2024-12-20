@@ -6,8 +6,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { access } from "fs";
-import { setUser } from "@sentry/nextjs";
 
 const UserTypeSelector = ({
   userType,

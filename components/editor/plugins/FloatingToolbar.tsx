@@ -97,19 +97,19 @@ function Toolbar({
     });
   }, [setReference, range]);
 
-  const convertHtml = () => {
-    console.log(editor);
+  // const convertHtml = () => {
+  //   console.log(editor);
 
-    // editor.update(() => {
-    //   const editorState = editor.getEditorState();
-    //   const jsonString = JSON.stringify(editorState);
-    //   console.log("jsonString", jsonString);
+  // editor.update(() => {
+  //   const editorState = editor.getEditorState();
+  //   const jsonString = JSON.stringify(editorState);
+  //   console.log("jsonString", jsonString);
 
-    //   // Generate HTML from the current editor state
-    //   const htmlString = $generateHtmlFromNodes(editor, null); // Adjust arguments as needed
-    //   console.log("htmlString", htmlString);
-    // });
-  };
+  //   // Generate HTML from the current editor state
+  //   const htmlString = $generateHtmlFromNodes(editor, null); // Adjust arguments as needed
+  //   console.log("htmlString", htmlString);
+  //   // });
+  // };
 
   return createPortal(
     <div

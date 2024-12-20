@@ -1,7 +1,6 @@
 'use server'
 
-import { clerkClient, currentUser } from "@clerk/nextjs/server"
-import { useId } from "react"
+import { clerkClient } from "@clerk/nextjs/server"
 import { parseStringify } from "../utils"
 import { liveblocks } from "../liveblocks"
 

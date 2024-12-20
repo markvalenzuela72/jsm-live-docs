@@ -11,7 +11,6 @@ import Image from "next/image";
 import { updateDocument } from "@/lib/actions/room.actions";
 import Loader from "./Loader";
 import ShareModal from "./ShareModal";
-import { Button } from "./ui/button";
 
 const CollaborativeRoom = ({
   roomId,
